@@ -123,22 +123,37 @@
   <data name="BARBER_NAME_REQUIRED" xml:space="preserve">
     <value>Barber name is required.</value>
   </data>
-  <data name="BARBER_NAME_MAXIMUM_LENGTH" xml:space="preserve">
-    <value>Barber name cannot exceed 80 characters. </value>
-  </data>
   <data name="CLIENT_NAME_REQUIRED" xml:space="preserve">
     <value>Client name is required.</value>
   </data>
-  <data name="CLIENT_NAME_MAXIMUM_LENGTH" xml:space="preserve">
-    <value>Client name cannot exceed 80 characters.</value>
-  </data>
-  <data name="BARBER_NAME_MINIMUM_LENGTH" xml:space="preserve">
-    <value>Barber name must be at least 2 characters long.</value>
-  </data>
-  <data name="CLIENT_NAME_MINIMUM_LENGTH" xml:space="preserve">
-    <value>Client name must be at least 2 characters long.</value>
-  </data>
   <data name="BILLING_NOT_FOUND" xml:space="preserve">
     <value>Billing not found.</value>
+  </data>
+  <data name="BARBER_NAME_LENGTH_RANGE" xml:space="preserve">
+    <value>Barber name must be between {MinLength} and {MaxLength} characters.</value>
+  </data>
+  <data name="CLIENT_NAME_LENGTH_RANGE" xml:space="preserve">
+    <value>Client name must be between {MinLength} and {MaxLength} characters.</value>
+  </data>
+  <data name="SERVICE_NAME_REQUIRED" xml:space="preserve">
+    <value>Service name is required.</value>
+  </data>
+  <data name="SERVICE_NAME_LENGTH_RANGE" xml:space="preserve">
+    <value>Service name must be between {MinLength} and {MaxLength} characters.</value>
+  </data>
+  <data name="AMOUNT_MUST_BE_POSITIVE" xml:space="preserve">
+    <value>Amount must be positive.</value>
+  </data>
+  <data name="AMOUNT_MUST_BE_ZERO_WHEN_CANCELLED" xml:space="preserve">
+    <value>Amount must be zero when cancelled.</value>
+  </data>
+  <data name="NOTES_MAXIMUM_LENGTH" xml:space="preserve">
+    <value>Notes must be at most {MaxLength} characters.</value>
+  </data>
+  <data name="PAYMENT_METHOD_INVALID" xml:space="preserve">
+    <value>Payment method is invalid.</value>
+  </data>
+  <data name="STATUS_INVALID" xml:space="preserve">
+    <value>Status is invalid.</value>
   </data>
 </root>

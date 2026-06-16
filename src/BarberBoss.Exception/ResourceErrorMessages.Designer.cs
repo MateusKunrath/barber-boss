@@ -60,20 +60,29 @@ namespace BarberBoss.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barber name cannot exceed 80 characters. .
+        ///   Looks up a localized string similar to Amount must be positive..
         /// </summary>
-        public static string BARBER_NAME_MAXIMUM_LENGTH {
+        public static string AMOUNT_MUST_BE_POSITIVE {
             get {
-                return ResourceManager.GetString("BARBER_NAME_MAXIMUM_LENGTH", resourceCulture);
+                return ResourceManager.GetString("AMOUNT_MUST_BE_POSITIVE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barber name must be at least 2 characters long..
+        ///   Looks up a localized string similar to Amount must be zero when cancelled..
         /// </summary>
-        public static string BARBER_NAME_MINIMUM_LENGTH {
+        public static string AMOUNT_MUST_BE_ZERO_WHEN_CANCELLED {
             get {
-                return ResourceManager.GetString("BARBER_NAME_MINIMUM_LENGTH", resourceCulture);
+                return ResourceManager.GetString("AMOUNT_MUST_BE_ZERO_WHEN_CANCELLED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barber name must be between {MinLength} and {MaxLength} characters..
+        /// </summary>
+        public static string BARBER_NAME_LENGTH_RANGE {
+            get {
+                return ResourceManager.GetString("BARBER_NAME_LENGTH_RANGE", resourceCulture);
             }
         }
         
@@ -96,20 +105,11 @@ namespace BarberBoss.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client name cannot exceed 80 characters..
+        ///   Looks up a localized string similar to Client name must be between {MinLength} and {MaxLength} characters..
         /// </summary>
-        public static string CLIENT_NAME_MAXIMUM_LENGTH {
+        public static string CLIENT_NAME_LENGTH_RANGE {
             get {
-                return ResourceManager.GetString("CLIENT_NAME_MAXIMUM_LENGTH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client name must be at least 2 characters long..
-        /// </summary>
-        public static string CLIENT_NAME_MINIMUM_LENGTH {
-            get {
-                return ResourceManager.GetString("CLIENT_NAME_MINIMUM_LENGTH", resourceCulture);
+                return ResourceManager.GetString("CLIENT_NAME_LENGTH_RANGE", resourceCulture);
             }
         }
         
@@ -119,6 +119,51 @@ namespace BarberBoss.Exception {
         public static string CLIENT_NAME_REQUIRED {
             get {
                 return ResourceManager.GetString("CLIENT_NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes must be at most {MaxLength} characters..
+        /// </summary>
+        public static string NOTES_MAXIMUM_LENGTH {
+            get {
+                return ResourceManager.GetString("NOTES_MAXIMUM_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment method is invalid..
+        /// </summary>
+        public static string PAYMENT_METHOD_INVALID {
+            get {
+                return ResourceManager.GetString("PAYMENT_METHOD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service name must be between {MinLength} and {MaxLength} characters..
+        /// </summary>
+        public static string SERVICE_NAME_LENGTH_RANGE {
+            get {
+                return ResourceManager.GetString("SERVICE_NAME_LENGTH_RANGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service name is required..
+        /// </summary>
+        public static string SERVICE_NAME_REQUIRED {
+            get {
+                return ResourceManager.GetString("SERVICE_NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status is invalid..
+        /// </summary>
+        public static string STATUS_INVALID {
+            get {
+                return ResourceManager.GetString("STATUS_INVALID", resourceCulture);
             }
         }
         
