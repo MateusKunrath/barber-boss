@@ -20,4 +20,14 @@ internal class BillingsRepository(BarberBossDbContext dbContext) : IBillingsRead
     {
         await dbContext.Billings.AddAsync(billing);
     }
+
+    public async Task<bool> Delete(Guid id)
+    {
+        var result = await dbContext.Billings.FirstOrDefaultAsync(b => b.Id == id);
+        if (result is null)
+            return false;
+        
+        dbContext.Billings.Remove(result);
+        return true;
+    }
 }
