@@ -1,4 +1,5 @@
 using BarberBoss.Domain.Entities;
+using BarberBoss.Domain.Enums;
 using BarberBoss.Domain.Repositories.Billings;
 using Microsoft.EntityFrameworkCore;
 using BarberBoss.Infrastructure.DataAccess.Extensions;
@@ -39,7 +40,23 @@ internal class BillingsRepository(BarberBossDbContext dbContext) : IBillingsRead
     {
         return await dbContext.Billings.AsNoTracking().FirstOrDefaultAsync(billing => billing.Id == id);
     }
-    
+
+    public async Task<List<Billing>> FilterByDate(DateOnly date)
+    {
+        var startDate = new DateTime(date.Year, date.Month, 1).Date;
+        
+        var daysInMonth = DateTime.DaysInMonth(date.Year, date.Month);
+        var endDate = new DateTime(date.Year, date.Month, daysInMonth, 23, 59, 59);
+        
+        return await dbContext
+            .Billings
+            .AsNoTracking()
+            .Where(billing => billing.Date >= startDate && billing.Date <= endDate)
+            .OrderBy(billing => billing.Date)
+            .ThenBy(billing => billing.BarberName)
+            .ToListAsync();
+    }
+
     async Task<Billing?> IBillingsUpdateOnlyRepository.GetById(Guid id)
     {
         return await dbContext.Billings.FirstOrDefaultAsync(billing => billing.Id == id);
