@@ -9,7 +9,7 @@ public class GetAllBillingsUseCase(IBillingsReadOnlyRepository repository, IMapp
 {
     public async Task<ResponseBillingsJson> Execute(RequestGetBillingsJson request)
     {
-        var (result, totalCount) = await repository.GetAllFiltered(mapper.Map<BillingFilters>(request));
+        var (result, totalCount) = await repository.GetAllFiltered(mapper.Map<GetBillingsFilters>(request));
         return new ResponseBillingsJson
         {
             Billings = mapper.Map<List<ResponseShortBillingJson>>(result),

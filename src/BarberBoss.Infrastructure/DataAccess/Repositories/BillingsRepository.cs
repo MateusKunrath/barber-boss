@@ -1,6 +1,7 @@
 using BarberBoss.Domain.Entities;
 using BarberBoss.Domain.Repositories.Billings;
 using Microsoft.EntityFrameworkCore;
+using BarberBoss.Infrastructure.DataAccess.Extensions;
 
 namespace BarberBoss.Infrastructure.DataAccess.Repositories;
 
@@ -11,9 +12,11 @@ internal class BillingsRepository(BarberBossDbContext dbContext) : IBillingsRead
         return await dbContext.Billings.AsNoTracking().ToListAsync();
     }
 
-    public async Task<(List<Billing>, int)> GetAllFiltered(BillingFilters request)
+    public async Task<(List<Billing>, int)> GetAllFiltered(GetBillingsFilters request)
     {
         var query = dbContext.Billings.AsNoTracking().AsQueryable();
+        
+        query = query.ApplyFilters(request);
 
         query = request.OrderBy switch
         {

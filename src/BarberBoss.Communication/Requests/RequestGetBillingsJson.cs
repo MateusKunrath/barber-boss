@@ -1,9 +1,10 @@
+using BarberBoss.Communication.Enums;
+
 namespace BarberBoss.Communication.Requests;
 
-public class RequestGetBillingsJson
+public class RequestGetBillingsJson : RequestFilteredJson
 {
-    public int Page { get; set; } = 1;
-    public int PageSize { get; set; } = 10;
-    public string? OrderBy { get; set; }
-    public bool Descending { get; set; } = false;
+    public string? BarberName { get; set; }
+    public string? ClientName { get; set; }
+    public Status? Status { get; set; }
 }

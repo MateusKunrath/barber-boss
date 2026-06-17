@@ -29,6 +29,6 @@ public class AutoMapping : Profile
 
     private void CommunicationToDomain()
     {
-        CreateMap<RequestGetBillingsJson, BillingFilters>();
+        CreateMap<RequestGetBillingsJson, GetBillingsFilters>();
     }
 }
