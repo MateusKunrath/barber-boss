@@ -10,7 +10,28 @@ internal class BillingsRepository(BarberBossDbContext dbContext) : IBillingsRead
     {
         return await dbContext.Billings.AsNoTracking().ToListAsync();
     }
-    
+
+    public async Task<(List<Billing>, int)> GetAllFiltered(BillingFilters request)
+    {
+        var query = dbContext.Billings.AsNoTracking().AsQueryable();
+
+        query = request.OrderBy switch
+        {
+            "date" => request.Descending ? query.OrderByDescending(b => b.Date) : query.OrderBy(b => b.Date),
+            "amount" => request.Descending ? query.OrderByDescending(b => b.Amount) : query.OrderBy(b => b.Amount),
+            _ => query.OrderBy(b => b.Date)
+        };
+        
+        var totalCount = await query.CountAsync();
+
+        var billings = await query
+            .Skip((request.Page - 1) * request.PageSize)
+            .Take(request.PageSize)
+            .ToListAsync();
+        
+        return (billings, totalCount);
+    }
+
     async Task<Billing?> IBillingsReadOnlyRepository.GetById(Guid id)
     {
         return await dbContext.Billings.AsNoTracking().FirstOrDefaultAsync(billing => billing.Id == id);
