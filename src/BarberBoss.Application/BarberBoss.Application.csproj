@@ -17,6 +17,16 @@
     <PackageReference Include="ClosedXML" Version="0.105.0" />
     <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.9" />
+    <PackageReference Include="PDFsharp-MigraDoc" Version="6.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\BebasNeue-Regular.ttf" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\BebasNeue-Regular.ttf" />
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf" />
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
 
 </Project>
