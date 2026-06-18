@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\src\BarberBoss.Communication\BarberBoss.Communication.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.6.5" />
+  </ItemGroup>
+
 </Project>
