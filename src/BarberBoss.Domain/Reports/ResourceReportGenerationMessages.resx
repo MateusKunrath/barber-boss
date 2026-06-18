@@ -162,4 +162,10 @@
   <data name="STATUS_CANCELLED" xml:space="preserve">
     <value>Cancelled</value>
   </data>
+  <data name="BILLINGS_FOR" xml:space="preserve">
+    <value>Billings for</value>
+  </data>
+  <data name="TOTAL_BILLINGS_ON" xml:space="preserve">
+    <value>Total billings on</value>
+  </data>
 </root>

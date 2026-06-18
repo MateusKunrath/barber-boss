@@ -18,27 +18,27 @@ namespace BarberBoss.Domain.Reports {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ResourceReportGenerationMessages {
+    internal class ResourceReportGenerationMessages_pt_BR {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceReportGenerationMessages() {
+        internal ResourceReportGenerationMessages_pt_BR() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BarberBoss.Domain.Reports.ResourceReportGenerationMessages", typeof(ResourceReportGenerationMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BarberBoss.Domain.Reports.ResourceReportGenerationMessages.pt-BR", typeof(ResourceReportGenerationMessages_pt_BR).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -50,7 +50,7 @@ namespace BarberBoss.Domain.Reports {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -60,153 +60,153 @@ namespace BarberBoss.Domain.Reports {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Amount.
+        ///   Looks up a localized string similar to Valor.
         /// </summary>
-        public static string AMOUNT {
+        internal static string AMOUNT {
             get {
                 return ResourceManager.GetString("AMOUNT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barber name.
+        ///   Looks up a localized string similar to Nome do barbeiro.
         /// </summary>
-        public static string BARBER_NAME {
+        internal static string BARBER_NAME {
             get {
                 return ResourceManager.GetString("BARBER_NAME", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Billings for.
+        ///   Looks up a localized string similar to Faturamento para.
         /// </summary>
-        public static string BILLINGS_FOR {
+        internal static string BILLINGS_FOR {
             get {
                 return ResourceManager.GetString("BILLINGS_FOR", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client name.
+        ///   Looks up a localized string similar to Nome do cliente.
         /// </summary>
-        public static string CLIENT_NAME {
+        internal static string CLIENT_NAME {
             get {
                 return ResourceManager.GetString("CLIENT_NAME", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date.
+        ///   Looks up a localized string similar to Data.
         /// </summary>
-        public static string DATE {
+        internal static string DATE {
             get {
                 return ResourceManager.GetString("DATE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notes.
+        ///   Looks up a localized string similar to Observações.
         /// </summary>
-        public static string NOTES {
+        internal static string NOTES {
             get {
                 return ResourceManager.GetString("NOTES", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Payment method.
+        ///   Looks up a localized string similar to Método de pagamento.
         /// </summary>
-        public static string PAYMENT_METHOD {
+        internal static string PAYMENT_METHOD {
             get {
                 return ResourceManager.GetString("PAYMENT_METHOD", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cash.
+        ///   Looks up a localized string similar to Dinheiro.
         /// </summary>
-        public static string PAYMENT_METHOD_CASH {
+        internal static string PAYMENT_METHOD_CASH {
             get {
                 return ResourceManager.GetString("PAYMENT_METHOD_CASH", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Credit card.
+        ///   Looks up a localized string similar to Cartão de crédito.
         /// </summary>
-        public static string PAYMENT_METHOD_CREDIT_CARD {
+        internal static string PAYMENT_METHOD_CREDIT_CARD {
             get {
                 return ResourceManager.GetString("PAYMENT_METHOD_CREDIT_CARD", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debit card.
+        ///   Looks up a localized string similar to Cartão de débito.
         /// </summary>
-        public static string PAYMENT_METHOD_DEBIT_CARD {
+        internal static string PAYMENT_METHOD_DEBIT_CARD {
             get {
                 return ResourceManager.GetString("PAYMENT_METHOD_DEBIT_CARD", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Electronic transfer.
+        ///   Looks up a localized string similar to Pix.
         /// </summary>
-        public static string PAYMENT_METHOD_ELECTRONIC_TRANSFER {
+        internal static string PAYMENT_METHOD_ELECTRONIC_TRANSFER {
             get {
                 return ResourceManager.GetString("PAYMENT_METHOD_ELECTRONIC_TRANSFER", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other.
+        ///   Looks up a localized string similar to Outro.
         /// </summary>
-        public static string PAYMENT_METHOD_OTHER {
+        internal static string PAYMENT_METHOD_OTHER {
             get {
                 return ResourceManager.GetString("PAYMENT_METHOD_OTHER", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service name.
+        ///   Looks up a localized string similar to Serviço.
         /// </summary>
-        public static string SERVICE_NAME {
+        internal static string SERVICE_NAME {
             get {
                 return ResourceManager.GetString("SERVICE_NAME", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status.
+        ///   Looks up a localized string similar to Situação.
         /// </summary>
-        public static string STATUS {
+        internal static string STATUS {
             get {
                 return ResourceManager.GetString("STATUS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancelled.
+        ///   Looks up a localized string similar to Cancelado.
         /// </summary>
-        public static string STATUS_CANCELLED {
+        internal static string STATUS_CANCELLED {
             get {
                 return ResourceManager.GetString("STATUS_CANCELLED", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paid.
+        ///   Looks up a localized string similar to Pago.
         /// </summary>
-        public static string STATUS_PAID {
+        internal static string STATUS_PAID {
             get {
                 return ResourceManager.GetString("STATUS_PAID", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total billings on.
+        ///   Looks up a localized string similar to Total do faturamento.
         /// </summary>
-        public static string TOTAL_BILLINGS_ON {
+        internal static string TOTAL_BILLINGS_ON {
             get {
                 return ResourceManager.GetString("TOTAL_BILLINGS_ON", resourceCulture);
             }

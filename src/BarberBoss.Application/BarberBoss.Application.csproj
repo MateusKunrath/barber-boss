@@ -27,6 +27,9 @@
     <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf" />
     <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf" />
     <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf" />
+    <None Update="Logo\BarberBossLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

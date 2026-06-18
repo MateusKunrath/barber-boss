@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="AMOUNT" xml:space="preserve">
+        <value>Valor</value>
+    </data>
+    <data name="BARBER_NAME" xml:space="preserve">
+        <value>Nome do barbeiro</value>
+    </data>
+    <data name="BILLINGS_FOR" xml:space="preserve">
+        <value>Faturamento para</value>
+    </data>
+    <data name="CLIENT_NAME" xml:space="preserve">
+        <value>Nome do cliente</value>
+    </data>
+    <data name="DATE" xml:space="preserve">
+        <value>Data</value>
+    </data>
+    <data name="NOTES" xml:space="preserve">
+        <value>Observações</value>
+    </data>
+    <data name="PAYMENT_METHOD" xml:space="preserve">
+        <value>Método de pagamento</value>
+    </data>
+    <data name="PAYMENT_METHOD_CASH" xml:space="preserve">
+        <value>Dinheiro</value>
+    </data>
+    <data name="PAYMENT_METHOD_CREDIT_CARD" xml:space="preserve">
+        <value>Cartão de crédito</value>
+    </data>
+    <data name="PAYMENT_METHOD_DEBIT_CARD" xml:space="preserve">
+        <value>Cartão de débito</value>
+    </data>
+    <data name="PAYMENT_METHOD_ELECTRONIC_TRANSFER" xml:space="preserve">
+        <value>Pix</value>
+    </data>
+    <data name="PAYMENT_METHOD_OTHER" xml:space="preserve">
+        <value>Outro</value>
+    </data>
+    <data name="SERVICE_NAME" xml:space="preserve">
+        <value>Serviço</value>
+    </data>
+    <data name="STATUS" xml:space="preserve">
+        <value>Situação</value>
+    </data>
+    <data name="STATUS_CANCELLED" xml:space="preserve">
+        <value>Cancelado</value>
+    </data>
+    <data name="STATUS_PAID" xml:space="preserve">
+        <value>Pago</value>
+    </data>
+    <data name="TOTAL_BILLINGS_ON" xml:space="preserve">
+        <value>Total do faturamento</value>
+    </data>
+</root>
