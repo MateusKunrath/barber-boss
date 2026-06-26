@@ -12,7 +12,7 @@ public class BillingValidatorTests
     public void Success()
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         
         var result = validator.Validate(request);
         
@@ -26,7 +26,7 @@ public class BillingValidatorTests
     public void ErrorBarberNameRequired(string barberName)
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.BarberName = barberName;
         
         var result = validator.Validate(request);
@@ -43,7 +43,7 @@ public class BillingValidatorTests
     public void ErrorBarberNameInvalidRange(string barberName, int minLength, int maxLength)
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.BarberName = barberName;
         
         var result = validator.Validate(request);
@@ -67,7 +67,7 @@ public class BillingValidatorTests
     public void ErrorClientNameRequired(string clientName)
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.ClientName = clientName;
         
         var result = validator.Validate(request);
@@ -84,7 +84,7 @@ public class BillingValidatorTests
     public void ErrorClientNameInvalidRange(string clientName, int minLength, int maxLength)
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.ClientName = clientName;
         
         var result = validator.Validate(request);
@@ -108,7 +108,7 @@ public class BillingValidatorTests
     public void ErrorServiceNameRequired(string serviceName)
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.ServiceName = serviceName;
         
         var result = validator.Validate(request);
@@ -125,7 +125,7 @@ public class BillingValidatorTests
     public void ErrorServiceNameInvalidRange(string serviceName, int minLength, int maxLength)
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.ServiceName = serviceName;
         
         var result = validator.Validate(request);
@@ -146,7 +146,7 @@ public class BillingValidatorTests
     public void ErrorAmountValue()
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.Amount = 50;
         request.Status = Status.Cancelled;
         
@@ -163,7 +163,7 @@ public class BillingValidatorTests
     public void CorrectAmountValueWhenPaid()
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.Amount = 50;
         request.Status = Status.Paid;
         
@@ -176,7 +176,7 @@ public class BillingValidatorTests
     public void CorrectAmountValueWhenCancelled()
     {
         var validator = new BillingValidator();
-        var request = RequestRegisterBillingJsonBuilder.Build();
+        var request = RequestBillingJsonBuilder.Build();
         request.Amount = 0;
         request.Status = Status.Cancelled;
         
