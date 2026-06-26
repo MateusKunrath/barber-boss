@@ -13,7 +13,7 @@ public static class PaymentMethodExtensions
             PaymentMethod.CreditCard => ResourceReportGenerationMessages.PAYMENT_METHOD_CREDIT_CARD,
             PaymentMethod.DebitCard => ResourceReportGenerationMessages.PAYMENT_METHOD_DEBIT_CARD,
             PaymentMethod.TransferElectronic => ResourceReportGenerationMessages.PAYMENT_METHOD_ELECTRONIC_TRANSFER,
-            _ => ResourceReportGenerationMessages.PAYMENT_METHOD_OTHER
+            _ => ResourceReportGenerationMessages.PAYMENT_METHOD_OTHER,
         };
     }
 }

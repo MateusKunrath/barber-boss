@@ -11,7 +11,7 @@ public static class StatusExtensions
         {
             Status.Paid => ResourceReportGenerationMessages.STATUS_PAID,
             Status.Cancelled => ResourceReportGenerationMessages.STATUS_CANCELLED,
-            _ => string.Empty
+            _ => string.Empty,
         };
     }
 }
