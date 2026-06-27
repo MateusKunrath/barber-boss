@@ -2,6 +2,7 @@ using AutoMapper;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
 using BarberBoss.Domain.Entities;
+using BarberBoss.Domain.Extensions;
 using BarberBoss.Domain.Repositories.Billings;
 
 namespace BarberBoss.Application.AutoMapper;
@@ -26,6 +27,9 @@ public class AutoMapping : Profile
         CreateMap<Billing, ResponseRegisteredBillingJson>();
         CreateMap<Billing, ResponseShortBillingJson>();
         CreateMap<Billing, ResponseBillingJson>();
+
+        CreateMap<User, ResponseUserProfileJson>()
+            .ForMember(dest => dest.Role, config => config.MapFrom(source => source.Role.RoleToString()));
     }
 
     private void CommunicationToDomain()

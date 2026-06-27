@@ -1,14 +1,14 @@
 using System.IdentityModel.Tokens.Jwt;
 using BarberBoss.Domain.Entities;
 using BarberBoss.Domain.Security.Tokens;
-using BarberBoss.Domain.Services.LoggedUser;
+using BarberBoss.Domain.Services.AuthenticatedUser;
 using BarberBoss.Infrastructure.DataAccess;
 using BarberBoss.Infrastructure.Security.Tokens;
 using Microsoft.EntityFrameworkCore;
 
-namespace BarberBoss.Infrastructure.Services.LoggedUser;
+namespace BarberBoss.Infrastructure.Services.AuthenticatedUser;
 
-public class LoggedUser(BarberBossDbContext dbContext, ITokenProvider tokenProvider) : ILoggedUser
+public class AuthenticatedUser(BarberBossDbContext dbContext, ITokenProvider tokenProvider) : IAuthenticatedUser
 {
     public async Task<User> Get()
     {
@@ -18,8 +18,8 @@ public class LoggedUser(BarberBossDbContext dbContext, ITokenProvider tokenProvi
 
         var identifier = jwtSecurityToken.Claims.First(claim => claim.Type.Equals(CustomClaimTypes.Sid)).Value;
         return await dbContext
-            .Users
-            .AsNoTracking()
-            .FirstAsync(user => user.Id.Equals(Guid.Parse(identifier)));
+                     .Users
+                     .AsNoTracking()
+                     .FirstAsync(user => user.Id.Equals(Guid.Parse(identifier)));
     }
 }
