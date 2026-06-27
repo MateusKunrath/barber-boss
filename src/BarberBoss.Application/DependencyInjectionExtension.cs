@@ -38,5 +38,6 @@ public static class DependencyInjectionExtension
         services.AddScoped<IAuthenticateUseCase, AuthenticateUseCase>();
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         services.AddScoped<IGetUserProfileUseCase, GetUserProfileUseCase>();
+        services.AddScoped<IUpdateUserProfileUseCase, UpdateUserProfileUseCase>();
     }
 }

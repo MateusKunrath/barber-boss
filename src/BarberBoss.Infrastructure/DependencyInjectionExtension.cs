@@ -54,5 +54,6 @@ public static class DependencyInjectionExtension
         services.AddScoped<IBillingsUpdateOnlyRepository, BillingsRepository>();
         services.AddScoped<IUsersReadOnlyRepository, UsersRepository>();
         services.AddScoped<IUsersWriteOnlyRepository, UsersRepository>();
+        services.AddScoped<IUsersUpdateOnlyRepository, UsersRepository>();
     }
 }

@@ -30,4 +30,16 @@ public class UsersController : ControllerBase
         var response = await useCase.Execute();
         return Ok(response);
     }
+
+    [Authorize]
+    [HttpPut]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> UpdateProfile(
+        [FromServices] IUpdateUserProfileUseCase useCase,
+        [FromBody] RequestUpdateUserProfileJson request)
+    {
+        await useCase.Execute(request);
+        return NoContent();
+    }
 }
