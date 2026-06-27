@@ -19,6 +19,16 @@ public class BillingsReadOnlyRepositoryBuilder
         return this;
     }
 
+    public BillingsReadOnlyRepositoryBuilder GetById(Billing? billing)
+    {
+        if (billing is not null)
+        {
+            _repository.Setup(repository => repository.GetById(billing.Id)).ReturnsAsync(billing);
+        }
+
+        return this;
+    }
+
     public IBillingsReadOnlyRepository Build()
     {
         return _repository.Object;
