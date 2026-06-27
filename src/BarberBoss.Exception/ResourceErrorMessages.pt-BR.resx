@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+                id="root"
+                xmlns="">
         <xsd:element name="root" msdata:IsDataSet="true">
-            
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -13,10 +15,14 @@
         <value>1.3</value>
     </resheader>
     <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <data name="AMOUNT_MUST_BE_POSITIVE" xml:space="preserve">
         <value>Valor deve ser positivo.</value>
@@ -56,5 +62,20 @@
     </data>
     <data name="UNKNOWN_ERROR" xml:space="preserve">
         <value>Erro não esperado.</value>
+    </data>
+    <data name="PASSWORD_INVALID" xml:space="preserve">
+        <value>Sua senha deve ter no mínimo 8 caracteres, contendo ao menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial (por exemplo: !, ?, *, .).</value>
+    </data>
+    <data name="EMAIL_INVALID" xml:space="preserve">
+        <value>E-mail é inválido.</value>
+    </data>
+    <data name="EMAIL_EMPTY" xml:space="preserve">
+        <value>E-mail é obrigatório.</value>
+    </data>
+    <data name="NAME_EMPTY" xml:space="preserve">
+        <value>Nome é obrigatório.</value>
+    </data>
+    <data name="EMAIL_ALREADY_EXISTS" xml:space="preserve">
+        <value>E-mail já existe.</value>
     </data>
 </root>

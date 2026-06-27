@@ -1,36 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj" />
-    <ProjectReference Include="..\BarberBoss.Domain\BarberBoss.Domain.csproj" />
-    <ProjectReference Include="..\BarberBoss.Exception\BarberBoss.Exception.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj"/>
+        <ProjectReference Include="..\BarberBoss.Domain\BarberBoss.Domain.csproj"/>
+        <ProjectReference Include="..\BarberBoss.Exception\BarberBoss.Exception.csproj"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="ClosedXML" Version="0.105.0" />
-    <PackageReference Include="FluentValidation" Version="12.1.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.9" />
-    <PackageReference Include="PDFsharp-MigraDoc" Version="6.2.4" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1"/>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+        <PackageReference Include="ClosedXML" Version="0.105.0"/>
+        <PackageReference Include="FluentValidation" Version="12.1.1"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.9"/>
+        <PackageReference Include="PDFsharp-MigraDoc" Version="6.2.4"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\BebasNeue-Regular.ttf" />
-    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\BebasNeue-Regular.ttf" />
-    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf" />
-    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf" />
-    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf" />
-    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf" />
-    <None Update="Logo\BarberBossLogo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="UseCases\Billings\Reports\Pdf\Fonts\BebasNeue-Regular.ttf"/>
+        <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\BebasNeue-Regular.ttf"/>
+        <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf"/>
+        <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Medium.ttf"/>
+        <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf"/>
+        <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Roboto-Regular.ttf"/>
+        <None Update="Logo\BarberBossLogo.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 
 </Project>
