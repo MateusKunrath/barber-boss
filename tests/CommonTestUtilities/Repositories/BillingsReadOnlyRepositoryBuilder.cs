@@ -29,6 +29,12 @@ public class BillingsReadOnlyRepositoryBuilder
         return this;
     }
 
+    public BillingsReadOnlyRepositoryBuilder FilterByDate(List<Billing> billings)
+    {
+        _repository.Setup(repository => repository.FilterByDate(It.IsAny<DateOnly>())).ReturnsAsync(billings);
+        return this;
+    }
+
     public IBillingsReadOnlyRepository Build()
     {
         return _repository.Object;
