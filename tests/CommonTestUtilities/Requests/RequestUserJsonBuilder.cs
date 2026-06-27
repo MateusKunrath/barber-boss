@@ -3,7 +3,7 @@ using Bogus;
 
 namespace CommonTestUtilities.Requests;
 
-public class RequestRegisterUserJsonBuilder
+public class RequestUserJsonBuilder
 {
     public static RequestRegisterUserJson Build()
     {
