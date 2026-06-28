@@ -24,6 +24,16 @@ public class UsersReadOnlyRepositoryBuilder
         return this;
     }
 
+    public UsersReadOnlyRepositoryBuilder GetById(User? user)
+    {
+        if (user is not null)
+        {
+            _repository.Setup(repository => repository.GetById(user.Id)).ReturnsAsync(user);
+        }
+
+        return this;
+    }
+
     public IUsersReadOnlyRepository Build()
     {
         return _repository.Object;

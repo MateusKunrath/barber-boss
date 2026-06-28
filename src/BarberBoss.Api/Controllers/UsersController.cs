@@ -1,3 +1,4 @@
+using BarberBoss.Application.UseCases.Users.GetById;
 using BarberBoss.Application.UseCases.Users.Profile;
 using BarberBoss.Application.UseCases.Users.Register;
 using BarberBoss.Communication.Requests;
@@ -41,5 +42,16 @@ public class UsersController : ControllerBase
     {
         await useCase.Execute(request);
         return NoContent();
+    }
+
+    [Authorize]
+    [HttpGet]
+    [Route("{id:guid}")]
+    [ProducesResponseType(typeof(ResponseUserJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetById([FromServices] IGetUserByIdUseCase useCase, [FromRoute] Guid id)
+    {
+        var response = await useCase.Execute(id);
+        return Ok(response);
     }
 }

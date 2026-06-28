@@ -17,6 +17,11 @@ internal class UsersRepository(BarberBossDbContext dbContext)
         return await dbContext.Users.AsNoTracking().FirstOrDefaultAsync(user => user.Email.Equals(email));
     }
 
+    async Task<User?> IUsersReadOnlyRepository.GetById(Guid id)
+    {
+        return await dbContext.Users.AsNoTracking().FirstOrDefaultAsync(user => user.Id.Equals(id));
+    }
+
     async Task<User> IUsersUpdateOnlyRepository.GetById(Guid id)
     {
         return (await dbContext.Users.FirstOrDefaultAsync(user => user.Id.Equals(id)))!;

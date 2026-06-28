@@ -81,4 +81,7 @@
     <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
         <value>Credenciais inválidas.</value>
     </data>
+    <data name="USER_NOT_FOUND" xml:space="preserve">
+        <value>Usuário não encontrado.</value>
+    </data>
 </root>

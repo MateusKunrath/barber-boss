@@ -28,6 +28,8 @@ public class AutoMapping : Profile
         CreateMap<Billing, ResponseShortBillingJson>();
         CreateMap<Billing, ResponseBillingJson>();
 
+        CreateMap<User, ResponseUserJson>()
+            .ForMember(dest => dest.Role, config => config.MapFrom(source => source.Role.RoleToString()));
         CreateMap<User, ResponseUserProfileJson>()
             .ForMember(dest => dest.Role, config => config.MapFrom(source => source.Role.RoleToString()));
     }
