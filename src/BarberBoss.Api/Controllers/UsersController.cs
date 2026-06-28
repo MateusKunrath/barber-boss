@@ -1,6 +1,7 @@
 using BarberBoss.Application.UseCases.Users.GetById;
 using BarberBoss.Application.UseCases.Users.Profile;
 using BarberBoss.Application.UseCases.Users.Register;
+using BarberBoss.Application.UseCases.Users.Update;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
 using Microsoft.AspNetCore.Authorization;
@@ -53,5 +54,19 @@ public class UsersController : ControllerBase
     {
         var response = await useCase.Execute(id);
         return Ok(response);
+    }
+
+    [Authorize]
+    [HttpPut]
+    [Route("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> Update(
+        [FromServices] IUpdateUserUseCase useCase,
+        [FromRoute] Guid id,
+        [FromBody] RequestUpdateUserJson request)
+    {
+        await useCase.Execute(id, request);
+        return NoContent();
     }
 }

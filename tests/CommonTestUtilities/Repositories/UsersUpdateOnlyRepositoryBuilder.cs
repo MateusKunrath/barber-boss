@@ -6,10 +6,25 @@ namespace CommonTestUtilities.Repositories;
 
 public class UsersUpdateOnlyRepositoryBuilder
 {
-    public static IUsersUpdateOnlyRepository Build(User user)
+    private readonly Mock<IUsersUpdateOnlyRepository> _repository;
+
+    public UsersUpdateOnlyRepositoryBuilder()
     {
-        var mock = new Mock<IUsersUpdateOnlyRepository>();
-        mock.Setup(repository => repository.GetById(user.Id)).ReturnsAsync(user);
-        return mock.Object;
+        _repository = new Mock<IUsersUpdateOnlyRepository>();
+    }
+
+    public UsersUpdateOnlyRepositoryBuilder GetById(User? user)
+    {
+        if (user is not null)
+        {
+            _repository.Setup(repository => repository.GetById(user.Id)).ReturnsAsync(user);
+        }
+
+        return this;
+    }
+
+    public IUsersUpdateOnlyRepository Build()
+    {
+        return _repository.Object;
     }
 }

@@ -5,14 +5,13 @@ using Bogus;
 
 namespace CommonTestUtilities.Requests;
 
-public class RequestUserJsonBuilder
+public class RequestUpdateUserJsonBuilder
 {
-    public static RequestRegisterUserJson Build()
+    public static RequestUpdateUserJson Build()
     {
-        return new Faker<RequestRegisterUserJson>()
+        return new Faker<RequestUpdateUserJson>()
                .RuleFor(x => x.Name, faker => faker.Person.FullName)
                .RuleFor(x => x.Email, (faker, user) => faker.Internet.Email(user.Name))
-               .RuleFor(x => x.Password, faker => faker.Internet.Password(prefix: "!Aa1"))
                .RuleFor(x => x.Role, faker => faker.PickRandom<Role>().RoleToString());
     }
 }

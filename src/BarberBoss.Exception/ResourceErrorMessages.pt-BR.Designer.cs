@@ -195,6 +195,24 @@ namespace BarberBoss.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Função é obrigatória..
+        /// </summary>
+        internal static string ROLE_EMPTY {
+            get {
+                return ResourceManager.GetString("ROLE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Função é inválida..
+        /// </summary>
+        internal static string ROLE_INVALID {
+            get {
+                return ResourceManager.GetString("ROLE_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nome do serviço deve ter entre {MinLength} e {MaxLength} caracteres..
         /// </summary>
         internal static string SERVICE_NAME_LENGTH_RANGE {

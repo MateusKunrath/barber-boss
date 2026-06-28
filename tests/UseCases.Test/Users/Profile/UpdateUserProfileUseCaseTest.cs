@@ -66,7 +66,7 @@ public class UpdateUserProfileUseCaseTest
         }
 
         return new UpdateUserProfileUseCase(
-            UsersUpdateOnlyRepositoryBuilder.Build(user),
+            new UsersUpdateOnlyRepositoryBuilder().GetById(user).Build(),
             readOnlyRepository.Build(),
             AuthenticatedUserBuilder.Build(user),
             UnitOfWorkBuilder.Build());

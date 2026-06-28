@@ -10,6 +10,7 @@ using BarberBoss.Application.UseCases.Billings.Update;
 using BarberBoss.Application.UseCases.Users.GetById;
 using BarberBoss.Application.UseCases.Users.Profile;
 using BarberBoss.Application.UseCases.Users.Register;
+using BarberBoss.Application.UseCases.Users.Update;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BarberBoss.Application;
@@ -41,5 +42,6 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetUserProfileUseCase, GetUserProfileUseCase>();
         services.AddScoped<IUpdateUserProfileUseCase, UpdateUserProfileUseCase>();
         services.AddScoped<IGetUserByIdUseCase, GetUserByIdUseCase>();
+        services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
     }
 }

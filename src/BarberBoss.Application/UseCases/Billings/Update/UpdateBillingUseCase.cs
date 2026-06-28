@@ -19,8 +19,10 @@ public class UpdateBillingUseCase(
 
         var billing = await repository.GetById(id);
         if (billing is null)
+        {
             throw new NotFoundException(ResourceErrorMessages.BILLING_NOT_FOUND);
-        
+        }
+
         mapper.Map(request, billing);
         repository.Update(billing);
         await unitOfWork.Commit();
@@ -32,7 +34,9 @@ public class UpdateBillingUseCase(
         var result = validator.Validate(request);
 
         if (result.IsValid)
+        {
             return;
+        }
 
         var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
         throw new ErrorOnValidationException(errorMessages);

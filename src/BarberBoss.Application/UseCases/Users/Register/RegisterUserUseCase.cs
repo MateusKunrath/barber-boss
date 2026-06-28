@@ -20,12 +20,12 @@ public class RegisterUserUseCase(
     IAccessTokenGenerator tokenGenerator,
     IUnitOfWork unitOfWork) : IRegisterUserUseCase
 {
-    public async Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson request)
+    public async Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson requestRegister)
     {
-        await Validate(request);
+        await Validate(requestRegister);
 
-        var user = mapper.Map<User>(request);
-        user.Password = passwordEncrypter.Encrypt(request.Password);
+        var user = mapper.Map<User>(requestRegister);
+        user.Password = passwordEncrypter.Encrypt(requestRegister.Password);
 
         await usersWriteOnlyRepository.Add(user);
         await unitOfWork.Commit();
@@ -37,11 +37,11 @@ public class RegisterUserUseCase(
         };
     }
 
-    private async Task Validate(RequestRegisterUserJson request)
+    private async Task Validate(RequestRegisterUserJson requestRegister)
     {
-        var result = await new RegisterUserValidator().ValidateAsync(request);
+        var result = await new RegisterUserValidator().ValidateAsync(requestRegister);
 
-        var emailsExists = await usersReadOnlyRepository.ExistActiveUserWithEmail(request.Email);
+        var emailsExists = await usersReadOnlyRepository.ExistActiveUserWithEmail(requestRegister.Email);
         if (emailsExists)
         {
             result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_ALREADY_EXISTS));

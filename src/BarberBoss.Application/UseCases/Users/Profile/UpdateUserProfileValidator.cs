@@ -2,7 +2,7 @@ using BarberBoss.Communication.Requests;
 using BarberBoss.Exception;
 using FluentValidation;
 
-namespace BarberBoss.Application.UseCases.Users;
+namespace BarberBoss.Application.UseCases.Users.Profile;
 
 public class UpdateUserProfileValidator : AbstractValidator<RequestUpdateUserProfileJson>
 {

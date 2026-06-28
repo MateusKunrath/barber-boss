@@ -1,4 +1,4 @@
-using BarberBoss.Application.UseCases.Users;
+using BarberBoss.Application.UseCases.Users.Profile;
 using BarberBoss.Exception;
 using CommonTestUtilities.Requests;
 using Shouldly;

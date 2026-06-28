@@ -183,4 +183,10 @@
     <data name="USER_NOT_FOUND" xml:space="preserve">
         <value>User not found.</value>
     </data>
+    <data name="ROLE_EMPTY" xml:space="preserve">
+        <value>Role is required.</value>
+    </data>
+    <data name="ROLE_INVALID" xml:space="preserve">
+        <value>Role is invalid.</value>
+    </data>
 </root>
