@@ -1,3 +1,4 @@
+using BarberBoss.Application.UseCases.Users.Delete;
 using BarberBoss.Application.UseCases.Users.GetById;
 using BarberBoss.Application.UseCases.Users.Profile;
 using BarberBoss.Application.UseCases.Users.Register;
@@ -67,6 +68,19 @@ public class UsersController : ControllerBase
         [FromBody] RequestUpdateUserJson request)
     {
         await useCase.Execute(id, request);
+        return NoContent();
+    }
+
+    [Authorize]
+    [HttpDelete]
+    [Route("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Delete(
+        [FromServices] IDeleteUserUseCase useCase,
+        [FromRoute] Guid id)
+    {
+        await useCase.Execute(id);
         return NoContent();
     }
 }
