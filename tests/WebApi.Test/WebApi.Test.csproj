@@ -24,10 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Billings\"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\..\src\BarberBoss.Api\BarberBoss.Api.csproj"/>
         <ProjectReference Include="..\..\src\BarberBoss.Infrastructure\BarberBoss.Infrastructure.csproj"/>
         <ProjectReference Include="..\CommonTestUtilities\CommonTestUtilities.csproj"/>

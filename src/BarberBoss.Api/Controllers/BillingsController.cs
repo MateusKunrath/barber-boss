@@ -5,12 +5,14 @@ using BarberBoss.Application.UseCases.Billings.Register;
 using BarberBoss.Application.UseCases.Billings.Update;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BarberBoss.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class BillingsController : ControllerBase
 {
     [HttpPost]
@@ -18,8 +20,7 @@ public class BillingsController : ControllerBase
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Register(
         [FromServices] IRegisterBillingUseCase useCase,
-        [FromBody] RequestBillingJson request
-    )
+        [FromBody] RequestBillingJson request)
     {
         var response = await useCase.Execute(request);
         return Created(string.Empty, response);
@@ -29,14 +30,16 @@ public class BillingsController : ControllerBase
     [ProducesResponseType(typeof(ResponseBillingsJson), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> GetAllBillings(
-        [FromServices] IGetAllBillingsUseCase useCase, 
+        [FromServices] IGetAllBillingsUseCase useCase,
         [FromQuery] RequestGetBillingsJson query
     )
     {
         var response = await useCase.Execute(query);
-        
+
         if (response.Billings.Count != 0)
+        {
             return Ok(response);
+        }
 
         return NoContent();
     }
@@ -67,10 +70,9 @@ public class BillingsController : ControllerBase
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Update(
-        [FromServices] IUpdateBillingUseCase useCase, 
-        [FromRoute] Guid id, 
-        [FromBody] RequestBillingJson request
-    )
+        [FromServices] IUpdateBillingUseCase useCase,
+        [FromRoute] Guid id,
+        [FromBody] RequestBillingJson request)
     {
         await useCase.Execute(id, request);
         return NoContent();

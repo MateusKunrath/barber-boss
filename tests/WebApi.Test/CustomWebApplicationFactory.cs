@@ -17,6 +17,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     public UserIdentityManager NormalUser { get; set; } = null!;
     public UserIdentityManager AdminUser { get; set; } = null!;
 
+    public BillingIdentityManager Billing { get; set; } = null!;
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Tests")
@@ -46,6 +48,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         AddNormalUser(dbContext, passwordEncrypter, accessTokenGenerator);
         AddAdminUser(dbContext, passwordEncrypter, accessTokenGenerator);
+
+        AddBilling(dbContext);
 
         dbContext.SaveChanges();
     }
@@ -82,5 +86,15 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
         AdminUser = new UserIdentityManager(user, password, token);
         return user;
+    }
+
+    private Billing AddBilling(BarberBossDbContext dbContext)
+    {
+        var billing = BillingBuilder.Build();
+        dbContext.Billings.Add(billing);
+
+        Billing = new BillingIdentityManager(billing);
+
+        return billing;
     }
 }

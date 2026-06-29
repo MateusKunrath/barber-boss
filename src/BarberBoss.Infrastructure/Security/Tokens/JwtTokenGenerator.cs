@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BarberBoss.Domain.Entities;
+using BarberBoss.Domain.Extensions;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BarberBoss.Infrastructure.Security.Tokens;
@@ -14,7 +15,7 @@ public class JwtTokenGenerator(uint expirationTimeInMinutes, string signingKey) 
         {
             new(CustomClaimTypes.Sid, user.Id.ToString()),
             new(CustomClaimTypes.Name, user.Name),
-            new(CustomClaimTypes.Role, nameof(user.Role)),
+            new(CustomClaimTypes.Role, user.Role.RoleToString()),
         };
 
         var tokenDescriptor = new SecurityTokenDescriptor
@@ -26,7 +27,7 @@ public class JwtTokenGenerator(uint expirationTimeInMinutes, string signingKey) 
 
         var tokenHandler = new JwtSecurityTokenHandler();
         var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-        
+
         return tokenHandler.WriteToken(securityToken);
     }
 

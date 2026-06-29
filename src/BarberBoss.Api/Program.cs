@@ -3,10 +3,11 @@ using BarberBoss.Api.Filters;
 using BarberBoss.Api.Middleware;
 using BarberBoss.Api.Token;
 using BarberBoss.Application;
+using BarberBoss.Domain.Security.Tokens;
 using BarberBoss.Infrastructure;
 using BarberBoss.Infrastructure.Extensions;
 using BarberBoss.Infrastructure.Migrations;
-using BarberBoss.Domain.Security.Tokens;
+using BarberBoss.Infrastructure.Security.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
@@ -21,7 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(config =>
 {
-    config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
         Description = @"JWT Authorization header using the Bearer scheme.
@@ -55,12 +56,14 @@ builder.Services.AddAuthentication(config =>
     config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(config =>
 {
-    config.TokenValidationParameters = new TokenValidationParameters()
+    config.MapInboundClaims = false;
+    config.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = false,
         ValidateAudience = false,
         ClockSkew = new TimeSpan(0),
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey!)),
+        RoleClaimType = CustomClaimTypes.Role,
     };
 });
 
@@ -95,4 +98,4 @@ async Task MigrateDatabase()
     await DatabaseMigration.MigrateDatabase(scope.ServiceProvider);
 }
 
-public partial class Program {}
+public partial class Program { }
