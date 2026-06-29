@@ -39,7 +39,7 @@ internal class UsersRepository(BarberBossDbContext dbContext)
 
     public async Task Delete(User user)
     {
-        var userToRemove = await dbContext.Users.FindAsync(user);
+        var userToRemove = await dbContext.Users.FindAsync(user.Id);
         dbContext.Users.Remove(userToRemove!);
     }
 }
