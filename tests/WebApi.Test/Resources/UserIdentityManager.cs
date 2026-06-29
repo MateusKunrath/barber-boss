@@ -16,7 +16,7 @@ public class UserIdentityManager(User user, string password, string token)
 
     public string GetPassword()
     {
-        return user.Password;
+        return password;
     }
 
     public string GetToken()
